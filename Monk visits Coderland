@@ -1,0 +1,52 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int num;
+	cin >> num;										// Reading input from STDIN
+//	cout << "Input number is " << num << endl;
+	while(num)
+	{
+	int N;
+	cin>>N;
+
+		int petrol_price[N];
+		int cost_require[N];
+		
+
+		for(int i=0;i<N;i++)
+		{
+				cin>>petrol_price[i];
+				//cout<<petrol_price[i]<<"\t";
+		}
+		
+
+		for(int i=0;i<N;i++)
+		cin>>cost_require[i];
+
+		int total=petrol_price[0]*cost_require[0];
+		int min_price=petrol_price[0];
+			for(int i=1;i<N;i++)
+			{
+				//cout<<petrol_price[i]<<endl;
+				if(petrol_price[i]<min_price)
+				{
+				
+				min_price=petrol_price[i];				
+				}
+				
+					total=total+min_price*cost_require[i];
+				
+			}
+			cout<<total<<endl;
+	
+num--;
+	}
+	}
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+
+
+// Write your code here
